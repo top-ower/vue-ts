@@ -1,1 +1,1 @@
-export const SET_AUTHOR = 'SET_AUTHOR'
+export const SET_USERNAME = 'SET_USERNAME'

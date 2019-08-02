@@ -11,12 +11,12 @@ const whiteList = ['/login'] // 不重定向白名单
 * 是：不限制页面访问； 否： 拉取用户信息和权限信息；重载路由集合和菜单
 * 1、2都不符合则正常访问
 */
-const IS_LOGINED = (callback: Function, to: any, from?: any) => {
+const IS_LOGINED = async (callback: Function, to: any, from?: any): Promise<any> => {
 	if (to.path === '/login') {
     return callback({ path: '/homes/index' })
   }
   if (!store.getters.userId) {
-    store.dispatch('GetInfo').then(res => { // 拉取用户信息
+    await store.dispatch('GetInfo').then(res => { // 拉取用户信息
       callback()
     }).catch(() => {
       store.dispatch('FedLogOut').then(() => {

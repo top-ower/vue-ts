@@ -1,9 +1,10 @@
 import state from './state'
-import { RootStateTypes } from './types'
+import { UserModel } from './types'
 import { GetterTree } from 'vuex'
 
-const getters: GetterTree<RootStateTypes, any> = {
-	author: (state: RootStateTypes) => state.author
+const getters: GetterTree<UserModel, any> = {
+	username: (state: UserModel) => state.username,
+	userId: (state: UserModel) => state.userId
 }
 
 export default getters

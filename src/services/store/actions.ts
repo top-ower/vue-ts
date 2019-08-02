@@ -1,10 +1,10 @@
 import state from './state'
-import { RootStateTypes } from './types'
+import { UserModel } from './types'
 import { ActionTree } from 'vuex'
 
-const actions: ActionTree<RootStateTypes, any> = {
-	SET_AUTHOR_ASYN({ commit, state: RootStateTypes }, data: string) {
-		commit('SET_AUTHOR', data)
+const actions: ActionTree<UserModel, any> = {
+	SET_USERNAME_ASYNC({ commit, state: UserModel }, data: string) {
+		commit('SET_USERNAME', data)
 	}
 }
 

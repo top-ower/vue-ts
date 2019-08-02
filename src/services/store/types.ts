@@ -1,3 +1,4 @@
-export interface RootStateTypes {
-	author: string
+export interface UserModel {
+	userId: string;
+	username: string;
 }

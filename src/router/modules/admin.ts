@@ -7,5 +7,5 @@ export default [
       keepAlive: true,
       title: '测试'
     }
-	},
+	}
 ]

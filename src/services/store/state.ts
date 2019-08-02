@@ -1,7 +1,8 @@
-import { RootStateTypes } from './types'
+import { UserModel } from './types'
 
-const state: RootStateTypes = {
-	author: '程晓生'
+const state: UserModel = {
+	userId: null,
+	username: '程晓生'
 }
 
 export default state

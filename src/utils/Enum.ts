@@ -21,7 +21,7 @@ export class Enum {
     if (value === undefined || value === null) {
       return ''
     }
-    for (let i in this) {
+    for (const i of Object.keys(this)) {
       let e: any = this[i]
       if (e && e.value === value) {
         return e.label

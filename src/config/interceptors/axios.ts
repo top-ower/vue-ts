@@ -2,7 +2,9 @@ import qs from 'qs'
 import { CONSOLE_REQUEST_ENABLE, CONSOLE_RESPONSE_ENABLE } from '@/config'
 
 export function requestSuccessFunc (req) {
-  if (CONSOLE_REQUEST_ENABLE) console.info('requestSuccess', '\n', req)
+  if (CONSOLE_REQUEST_ENABLE) {
+    console.info('requestSuccess', '\n', req)
+  }
   // 自定义请求拦截逻辑，可以处理权限，请求发送监控等
   if (req.url.indexOf('s=') === -1) {
     req.url = req.url.indexOf('?') !== -1 ? `${req.url}&s=${new Date().getTime()}` : `${req.url}?s=${new Date().getTime()}`
@@ -17,7 +19,9 @@ export function requestFailFunc (err) {
 }
 
 export function responseSuccessFunc (res) {
-  if (CONSOLE_RESPONSE_ENABLE) console.info('responseSuccess', '\n', res)
+  if (CONSOLE_RESPONSE_ENABLE) { 
+    console.info('responseSuccess', '\n', res)
+  }
   // 自定义响应成功逻辑，全局拦截接口，根据不同业务做不同处理，响应成功监控等
   return res
 }
@@ -25,7 +29,9 @@ export function responseSuccessFunc (res) {
 export function responseFailFunc (err) {
   // 响应失败，可根据 err.message 和 err.response 来做监控处理
   const { message, response } = err
-  if (CONSOLE_RESPONSE_ENABLE) console.info('responseFail', '\n', `message: ${message}`, '\n', response)
+  if (CONSOLE_RESPONSE_ENABLE) {
+    console.info('responseFail', '\n', `message: ${message}`, '\n', response)
+  }
   const { errorIntercept, closeErrorIntercept } = response.config.option
   if (errorIntercept && !closeErrorIntercept) {
     // 自定义全局错误拦截处理

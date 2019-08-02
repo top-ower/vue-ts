@@ -5,8 +5,11 @@ const routeModules = importAll(
 )
 
 let configs = {}
-routeModules.forEach(({camelModuleName, module}) => {
+for (let {camelModuleName, module} of routeModules) {
 	configs[camelModuleName] = module
-})
+}
+// routeModules.forEach(({camelModuleName, module}) => {
+// 	configs[camelModuleName] = module
+// })
 
 export default configs

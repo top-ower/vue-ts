@@ -25,14 +25,18 @@ export const getPara = function (params) {
   let total = -1
   let pageSize = 10
   let keyStr = ''
-  Object.keys(params).forEach((key, val) => {
+  for (let key of Object.keys(params)) {
     if (key.toLowerCase().indexOf('number') !== -1) {
     	keyStr = key
     	pageNumber = params[key]
     }
-    if (key.toLowerCase().indexOf('total') !== -1) total = params[key] - 1
-    if (key.toLowerCase().indexOf('size') !== -1) pageSize = params[key]
-  })
+    if (key.toLowerCase().indexOf('total') !== -1) { 
+      total = params[key] - 1
+    }
+    if (key.toLowerCase().indexOf('size') !== -1) { 
+      pageSize = params[key]
+    }
+  }
   params[keyStr] = pageNumber > 1 && pageNumber > Math.ceil(total / pageSize) ? Math.ceil(total / pageSize) : pageNumber
   return params
 }
@@ -43,7 +47,9 @@ export const getPara = function (params) {
 export const tableTotalReplace = function (totalNum, className = '.el-pagination__total') {
   setTimeout(() => { 
     let paginationElement = document.querySelector('.pagination-container')
-    if (!paginationElement) return
+    if (!paginationElement) { 
+      return 
+    }
     let totalElement = paginationElement.querySelector(className)
     totalElement.innerHTML = `共 <em>${totalNum}</em> 条` 
   }, 200)
@@ -57,7 +63,7 @@ export const sizeChange = function (params, val) {
   let pageNumber = 1
   let total = -1
   let keyStr = ''
-	Object.keys(params).forEach(key => {
+	for (let key of Object.keys(params)) {
 		if (key.toLowerCase().indexOf('number') !== -1) {
 			pageNumber = params[key]
 			keyStr = key
@@ -68,7 +74,7 @@ export const sizeChange = function (params, val) {
 		if (key.toLowerCase().indexOf('total') !== -1) {
 			total = params[key]
 		}
-	})
+	}
   params[keyStr] = pageNumber > Math.ceil(total / val) ? Math.ceil(total / val) : pageNumber
   return params
 }
@@ -79,14 +85,14 @@ export const sizeChange = function (params, val) {
 * obj 赋值的对象数组
 */
 export const setJsonData = function (data, obj) {
-	if (!data || !obj) return
-  Object.keys(data).forEach(key => {
-		Object.keys(obj).forEach(tmpKey => {
+	if (!data || !obj) { return }
+  for (let key of Object.keys(data)) {
+    for (let tmpKey of Object.keys(obj)) {
       if (key === tmpKey) {
         obj[tmpKey] = validatenull(data[key]) ? obj[tmpKey] : data[key]
       }
-    })
-  })
+    }
+  }
   return obj
 }
 
