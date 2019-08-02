@@ -1,0 +1,21 @@
+@charset "utf-8";
+// vw 单位换算：定为 192px 只是方便运算，1920px-192px、1600-160px、1366px-136px，如此类推
+$vw_fontSize: 192;
+$vw_design: 1920;
+
+// 兼容ie8 ie9 ie10 hack符：\0，必须写在属性值与分号之间，中间不加空格
+// vw ie9局部不兼容 例如:line-height font-size
+@function vw($px) {
+	@return ($px / $vw_design) * 100vw;
+	// @return ($px / 192) * 1rem;
+}
+
+// 按钮 文本输入的大小控制
+@function tRem($px) {
+	// @return ($px / 192) * 1rem;
+	@return $px * 1px;
+}
+
+@function rem($px) {
+	@return $px * 1px;
+}

@@ -1,0 +1,108 @@
+@charset "utf-8";
+@import './config.scss';
+@import './variables.scss';
+
+@mixin transition($property) {
+  transition: $property;
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+  -ms-transition: $property;
+}
+
+@mixin transform($property) {
+  transform: $property;
+  -moz-transform: $property;
+  -webkit-transform: $property;
+  -o-transform: $property;
+  -ms-transition: $property;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+}
+
+@mixin scrollBar {
+  &:hover {
+    &::-webkit-scrollbar-track-piece {
+      background: #fff;
+    }
+
+    &::-webkit-scrollbar {
+      width: vw(6);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: vw(20);
+    }
+
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 0;
+  }
+
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin vertical-middle {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin input-placeholder {
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+    color: $color-969799 !important;
+    font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+    font-weight: normal;
+    // line-height: 1 !important;
+  }
+
+  :-moz-placeholder {
+    font-size: 14px;
+    color: $color-969799 !important;
+  }
+
+  ::-moz-placeholder {
+    font-size: 14px;
+    color: $color-969799 !important;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 14px;
+    font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+    font-weight: normal;
+    color: $color-969799 !important;
+  }
+
+}
+
+@mixin text-overflow($property) {
+  text-overflow: $property;
+  -moz-text-overflow: $property;
+  -o-text-overflow: $property;
+  -ms-text-overflow: $property;
+  -webkit-text-overflow: $property;
+}

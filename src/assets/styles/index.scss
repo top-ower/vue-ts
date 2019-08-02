@@ -1,0 +1,206 @@
+@charset "utf-8";
+@import './config.scss';
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './onlyScreen.scss';
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+  background: $body-bg-color;
+  font-size: tRem(14);
+}
+
+html {
+  box-sizing: border-box;
+  // font-size: 10vw;
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* 解决IE上按钮字体显示不正确的bug */
+button, input, optgroup, select, textarea {
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+}
+
+div:focus {
+  outline: none;
+}
+
+a:focus, a:active, button:focus {
+  outline: none !important;
+}
+
+a, a:focus, a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+select, a, button, input {
+  outline: none;
+}
+
+/*删除密码框中的小眼睛*/
+input::-ms-clear {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  font-size: tRem(14);
+  color: $color-969799 !important;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+  font-weight: normal;
+}
+
+:-moz-placeholder {
+  font-size: tRem(14);
+  color: $color-969799 !important;
+}
+
+::-moz-placeholder {
+  font-size: tRem(14);
+  color: $color-969799 !important;
+}
+
+:-ms-input-placeholder {
+  font-size: tRem(14);
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+  font-weight: normal;
+  color: $color-969799 !important;
+}
+
+/*删除文本框中的叉号*/
+input::-ms-reveal {
+  display: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+}
+
+//火狐下的移除
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+//谷歌下的移除
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+//main-container全局样式
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: tRem(220);
+    font-size: tRem(14);
+
+    .containerTcloud {
+      min-height: vw(870);
+      min-height: calc(100vh - 90px);
+      min-height: -webkit-calc(100vh - 90px);
+      min-height: -moz-calc(100vh - 90px);
+      padding: vw(20);
+      background: $bg-clolr;
+    }
+
+  }
+
+  .app-container {
+    padding: 0;
+    margin: tRem(70) tRem(20) tRem(20);
+    min-height: vw(870);
+    min-height: calc(100vh - 90px);
+    min-height: -webkit-calc(100vh - 90px);
+    min-height: -moz-calc(100vh - 90vw / 192);
+    font-size: tRem(14);
+
+    .base-page {
+      min-height: vw(870);
+      min-height: calc(100vh - 90px);
+      min-height: -webkit-calc(100vh - 90px);
+      min-height: -moz-calc(100vh - 90px);
+      background-color: $bg-clolr;
+    }
+
+    .sub-page {
+      min-height: vw(856);
+      min-height: calc(100vh - 104px);
+      min-height: -webkit-calc(100vh - 104px);
+      min-height: -moz-calc(100vh - 104px);
+      background-color: $bg-clolr;
+    }
+
+    .app_title {
+      margin: - vw(10) 0 vw(10);
+      font-size: tRem(14);
+      color: $app-title-color;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .link_title {
+      cursor: pointer;
+    }
+
+    .el-form {
+      padding: tRem(30) tRem(20) 0;
+    }
+
+    .el-input, .el-textarea {
+      @include input-placeholder;
+    }
+
+    .textarea {
+      position: relative;
+      max-width: tRem(400);
+      margin-left: tRem(5);
+      margin: 0;
+
+      .el-textarea__inner {
+        line-height: 1.4;
+        padding: tRem(10) tRem(15) tRem(30);
+        max-width: tRem(400);
+        resize: none;
+        //禁止拉伸
+        @include scrollBar;
+      }
+
+      .length {
+        position: absolute;
+        right: tRem(20);
+        bottom: tRem(10);
+        font-size: tRem(12);
+        color: $color-969799;
+      }
+
+    }
+
+  }
+
+}

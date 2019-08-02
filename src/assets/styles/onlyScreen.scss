@@ -1,0 +1,130 @@
+@media only screen and (min-width:768px) and (max-width:1028px) {
+	.navbar .hamburger-container {
+		display: table-cell !important;
+	}
+
+	.navbar .navbar_header {
+		padding: 0 vw(30) 0 0 !important;
+	}
+
+	.app-container .containerDeviceDebug {
+		height: 100% !important;
+		overflow-y: scroll !important;
+
+		.deviceList {
+			margin: 0 vw(20) vw(20) 0 !important;
+			height: 100% !important;
+			min-height: vw(600) !important;
+		}
+
+		.deviceInfo {
+			min-height: vw(800) !important;
+		}
+
+	}
+
+	.analysis-container .statistical .user-container .item, .analysis-container .statistical .device-container .item {
+		margin: 0 auto;
+	}
+
+	.analysis-container .statistical .user-container, .analysis-container .statistical .device-container {
+		padding: 0 !important;
+	}
+
+}
+
+@media screen and (max-width:1440px) {
+	.el-form-item {
+		margin-bottom: 20px !important;
+	}
+
+	.searchBox .el-input.el-input--medium {
+		max-width: 160px !important;
+	}
+
+	.searchMore {
+		.el-select {
+			.el-select--medium, .el-input.el-input--medium {
+				max-width: 120px !important;
+			}
+
+		}
+
+	}
+
+}
+
+@media screen and (min-width:1100px) and (max-width:1500px) {
+	html {
+		font-size: 150px !important;
+	}
+
+	.containerDeviceDebug {
+		.point-container {
+			.left, .right {
+				width: 100%;
+			}
+
+			.right {
+				margin-top: 20px !important;
+			}
+
+		}
+
+	}
+
+}
+
+@media screen and (min-width:1100px) and (max-width:1400px) {
+	.login-form-container {
+		// top: vw(190) !important;
+	}
+
+}
+
+@media screen and (min-width:1100px) and (max-width:1500px) {
+	.login-form-container {
+		.code-input {
+			// width: calc(100% - 98vw / 19.2 - 10vw / 19.2) !important;
+			// width: -webkit-calc(100% - 98vw / 19.2 - 10vw / 19.2) !important;
+			// width: -moz-calc(100% - 98vw / 19.2 - 10vw / 19.2) !important;
+		}
+
+	}
+
+	.userDetailContainer .deviceList {
+		min-height: vw(400) !important;
+	}
+
+	.deviceDetailContainer {
+		.el-tabs__content {
+			// min-height: vw(500) !important;
+		}
+
+	}
+
+}
+
+@media screen and(-ms-high-contrast:active), (-ms-high-contrast:none) {
+	html, body {
+		font-family: Microsoft YaHei !important;
+	}
+
+	.el-table {
+		.el-button {
+			// padding: tRem(7) tRem(20) tRem(5) !important;
+		}
+
+	}
+
+	.navbar_header {
+		.btns {
+			.el-button {
+				// padding: tRem(10) tRem(20) tRem(7) !important;
+			}
+
+		}
+
+	}
+
+}
