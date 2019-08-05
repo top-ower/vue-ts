@@ -1,0 +1,21 @@
+{
+	"data":{
+		"icon_url":"http://internal-file.topband-cloud.com/topband/tcloud/img/a20efde952794746923a7381f6d4e881.bmp",
+		"deviceFields":{
+			"resetFlag":0,
+			"online":0,
+			"updateTime":"2018-09-14 18:23:10",
+			"id":"a617891b0d374cd39a1306bbe3c2bd4f"
+		},
+		"gatewayUid":"6ec3d39148a037bfaae3f4c966eab586",
+		"productId":"7fe161f2fae6447180d48e2b243fe426",
+		"activateTime":"2018-09-15 15:14:20",
+		"model":"JH0118",
+		"id":"e0f40aa8a6324aeeaed2289d580c6a78",
+		"deviceName":"Lithium Battery",
+		"productName":"TsmartWiFi_锂电池"
+	},
+	"message":"succ",
+	"status":0,
+	"timestamp":1546068724027
+}

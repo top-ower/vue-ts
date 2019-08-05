@@ -1,0 +1,19 @@
+{
+	"data":{
+		"repairerInfo":{
+			"createTime":"@datetime()",
+			"desc":"@sentence()",
+			"deviceId":"@guid()",
+			"deviceName":"@name()",
+			"id":"@id()",
+			"model":"@name()",
+			"repairTypeName":"@name()",
+			"repairerName":"@cname()",
+			"repairerPhone":"18512141640"
+		},
+		"urls":["@image('800x800','#4c84ff','#fff','default')", "@image('800x800','#4c84ff','#fff','default')", "@image('800x800','#4c84ff','#fff','default')", "@image('800x800','#4c84ff','#fff','default')"]
+	},
+	"message":"succ",
+	"status":0,
+	"timestamp":1546069154412
+}

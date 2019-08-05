@@ -1,0 +1,21 @@
+{
+	"data":{
+		"total":5,
+		"rows|1-100":[
+			{
+				"createTime":"@datetime()",
+				"desc":"@paragraph()",
+				"deviceId":"@guid()",
+				"deviceName":"@name()",
+				"id":"@id()",
+				"model":"@name()",
+				"repairTypeName":"@name()",
+				"repairerName":"@cname()",
+				"repairerPhone":"18512141640"
+			}
+		]
+	},
+	"message":"succ",
+	"status":0,
+	"timestamp":1546068675728
+}

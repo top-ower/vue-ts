@@ -1,0 +1,33 @@
+{
+	"data":{
+		"total":2,
+		"rows|1-100":[
+			{
+				"appUserInfo":null,
+				"brand":null,
+				"city":"@city()",
+				"companyId":null,
+				"country":"@country()",
+				"createBy":null,
+				"createTime":"@datetime()",
+				"delFlag":null,
+				"email":"@email()",
+				"idc":null,
+				"ip":"@ip()",
+				"os":null,
+				"password":null,
+				"phone":"18512146666",
+				"province":"@province()",
+				"registerType":null,
+				"updateBy":null,
+				"updateTime":"@datetime()",
+				"userId":"@id()",
+				"userName":"@cname()",
+				"userType":0
+			}
+		]
+	},
+	"message":"succ",
+	"status":0,
+	"timestamp":1546068724038
+}
