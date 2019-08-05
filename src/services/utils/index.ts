@@ -14,13 +14,13 @@ export const isIE = function (): boolean {
 }
 
 // 是否IE
-export const isIEbrowsers = function () {
+export const isIEbrowsers = function (): boolean {
   let isIe = navigator.userAgent.indexOf('Trident') > -1
   return isIe
 }
 
 // 处理表格删除数据的请求参数
-export const getPara = function (params) {
+export const getPara = function (params): any {
   let pageNumber = 1
   let total = -1
   let pageSize = 10
@@ -44,7 +44,7 @@ export const getPara = function (params) {
 /*
 * element-ui 表格总计数字样式替换
 */
-export const tableTotalReplace = function (totalNum, className = '.el-pagination__total') {
+export const tableTotalReplace = function (totalNum, className = '.el-pagination__total'): void {
   setTimeout(() => { 
     let paginationElement = document.querySelector('.pagination-container')
     if (!paginationElement) { 
@@ -59,7 +59,7 @@ export const tableTotalReplace = function (totalNum, className = '.el-pagination
 * 表格分页改变每页显示条数
 * 解决IE10 切换每页显示条数 数据未正常显示
 */
-export const sizeChange = function (params, val) {
+export const sizeChange = function (params, val): any {
   let pageNumber = 1
   let total = -1
   let keyStr = ''
@@ -84,7 +84,7 @@ export const sizeChange = function (params, val) {
 * data 后台返回的对象
 * obj 赋值的对象数组
 */
-export const setJsonData = function (data, obj) {
+export const setJsonData = function (data, obj): any {
 	if (!data || !obj) { return }
   for (let key of Object.keys(data)) {
     for (let tmpKey of Object.keys(obj)) {
@@ -100,7 +100,7 @@ export const setJsonData = function (data, obj) {
 * 返回html标签内的img 图片地址集合
 * content html标签内容
 */
-export const getImgMap = function (content) {
+export const getImgMap = function (content): Array<[]> {
 	let imgArr = []
 	content && content.replace(/<img [^>]*path=['"]([^'"]+)[^>]*>/gi, function (match, capture) {
 		imgArr.push(capture)
@@ -112,7 +112,7 @@ export const getImgMap = function (content) {
 * 获得上一年在昨天这一天的日期  
 * datastr 时间日期
 */
-export const getLastYearYestdy = function (date) {
+export const getLastYearYestdy = function (date): string {
 	let datastr = ''
 	let strYear = date.getFullYear() - 1
   let strDay = date.getDate()
@@ -134,7 +134,7 @@ export const getLastYearYestdy = function (date) {
   * 获取当前的域名地址
   * datastr 时间日期
 */
-export const getDomain = function (date) {
+export const getDomain = function (date): string {
 	let tmplocation = window.location || location
 	return `${tmplocation.host}`
 }

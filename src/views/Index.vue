@@ -11,10 +11,10 @@
   @Component
   export default class Index extends Vue {
     //Getter
-    // @Getter username;   // 账号用户名
+    @Getter username;   // 账号用户名
 
     //Mutation
-    @Mutation SET_USERNAME;
+    @Mutation SET_USER;
     //data
     name: string = '';
 
@@ -26,7 +26,7 @@
 
     setUsername(name) {
       this.name = name
-      this.SET_USERNAME(name);
+      this.SET_USER(name);
     }
   }
 </script>

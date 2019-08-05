@@ -1,36 +1,7 @@
-import store from '@/services/store'
-import { Message } from 'element-ui'
+import { IS_LOGINED } from '@/services/router'
 import { getToken } from '@/utils/auth' // 验权
 
 const whiteList = ['/login'] // 不重定向白名单
-
-/**
-* 权限控制(已登录的权限处理)
-* 1. 用户访问登录页, 默认跳转至首页
-* 2. 判断vuex 是否有用户记录信息
-* 是：不限制页面访问； 否： 拉取用户信息和权限信息；重载路由集合和菜单
-* 1、2都不符合则正常访问
-*/
-const IS_LOGINED = async (callback: Function, to: any, from?: any): Promise<any> => {
-	if (to.path === '/login') {
-    return callback({ path: '/homes/index' })
-  }
-  if (!store.getters.userId) {
-    await store.dispatch('GetInfo').then(res => { // 拉取用户信息
-      callback()
-    }).catch(() => {
-      store.dispatch('FedLogOut').then(() => {
-        Message({
-          type: 'error',
-          message: 'Authentication failed. Please login again.',
-          center: true
-        });
-        callback({ path: '/login' })
-      })
-    })
-  }
-  return callback()
-}
 
 /**
 * 页面拦截
