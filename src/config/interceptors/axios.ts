@@ -1,14 +1,19 @@
 import qs from 'qs'
+import store from '@/plugins/store'
 import { CONSOLE_REQUEST_ENABLE, CONSOLE_RESPONSE_ENABLE } from '@/config'
+import { getToken } from '@/utils/auth'
+import { setTimestampParameters, setFormParams, responseIntercept} from '@/services/utils/axios'
 
 export function requestSuccessFunc (req) {
   if (CONSOLE_REQUEST_ENABLE) {
     console.info('requestSuccess', '\n', req)
   }
   // 自定义请求拦截逻辑，可以处理权限，请求发送监控等
-  if (req.url.indexOf('s=') === -1) {
-    req.url = req.url.indexOf('?') !== -1 ? `${req.url}&s=${new Date().getTime()}` : `${req.url}?s=${new Date().getTime()}`
+  if (store.getters.token) {
+    req.headers['Authorization'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
   }
+  setTimestampParameters(req)
+  setFormParams(req)
   return req
 }
 
